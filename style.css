@@ -1,0 +1,923 @@
+/* =====================================
+   PHOTOSBYJOVONNE — FUTURISTIC PORTFOLIO
+   ===================================== */
+
+:root {
+  --background: #030609;
+  --surface: #0a1017;
+  --text: #f5f7fb;
+  --muted: #9ca8b8;
+  --cyan: #00e5ff;
+  --yellow: #ffe45e;
+  --magenta: #ff3cac;
+  --white: #f5f7fb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--text);
+  background:
+    radial-gradient(ellipse at 50% 85%,
+      rgba(0, 229, 255, 0.045), transparent 55%),
+    var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* NAVIGATION */
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  padding: 30px 4%;
+  border-bottom: 1px solid #263440;
+}
+
+.brand {
+  font-size: 0.8rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.main-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 35px;
+}
+
+.main-nav a {
+  color: #b0b9c5;
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  transition: color 0.2s;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+  color: var(--cyan);
+}
+
+.main-nav a.active {
+  border-bottom: 2px solid var(--cyan);
+  padding-bottom: 8px;
+}
+
+/* CENTERED LOGO */
+
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 310px;
+  padding: 35px 20px 20px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-line {
+  position: absolute;
+  top: 48%;
+  left: 4%;
+  width: 92%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--cyan),
+    transparent
+  );
+  opacity: 0.65;
+  z-index: 0;
+}
+
+.hero-logo {
+  position: relative;
+  z-index: 1;
+  width: min(250px, 55vw);
+  max-height: 220px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 18px rgba(0,229,255,.25));
+}
+
+.hero h1 {
+  position: relative;
+  z-index: 1;
+  margin: 18px 0 5px;
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  font-weight: 400;
+  letter-spacing: 0.28em;
+}
+
+.hero-subtitle {
+  margin: 8px 0;
+  color: var(--muted);
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+}
+
+/* ALBUM CARDS */
+
+.albums-section {
+  padding: 35px 4% 90px;
+}
+
+.albums-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+  max-width: 1550px;
+  margin: auto;
+}
+
+.album-card {
+  --accent: var(--cyan);
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 12px;
+  background: #04080d;
+  border: 2px solid var(--accent);
+  clip-path: polygon(
+    18px 0,
+    calc(100% - 18px) 0,
+    100% 18px,
+    100% calc(100% - 18px),
+    calc(100% - 18px) 100%,
+    18px 100%,
+    0 calc(100% - 18px),
+    0 18px
+  );
+
+  filter: drop-shadow(0 0 10px var(--accent));
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+.album-card:hover {
+  transform: translateY(-8px);
+  background: #101925;
+}
+
+.events-card {
+  --accent: var(--cyan);
+}
+
+.infrared-card {
+  --accent: var(--magenta);
+}
+
+.scenery-card {
+  --accent: var(--yellow);
+}
+
+.others-card {
+  --accent: var(--white);
+}
+
+.album-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 270px;
+  overflow: hidden;
+  background: #080d14;
+}
+
+.album-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ALBUM TITLES */
+
+.album-info {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  padding: 15px 7px 5px;
+}
+
+.album-info h2 {
+  grid-column: 1 / -1;
+  margin: 0 0 8px;
+  color: var(--accent);
+  font-size: clamp(1rem, 1.7vw, 1.55rem);
+  font-weight: 400;
+  letter-spacing: 0.16em;
+}
+
+.album-info span {
+  color: var(--accent);
+  font-size: 0.8rem;
+}
+
+.album-arrow {
+  font-size: 1.4rem !important;
+  text-align: right;
+}
+
+/* ABOUT */
+
+.about-section {
+  max-width: 900px;
+  margin: 10px auto 90px;
+  padding: 40px 7%;
+  text-align: center;
+}
+
+.about-section h2 {
+  color: var(--cyan);
+  font-size: 0.9rem;
+  letter-spacing: 0.3em;
+}
+
+.about-section p {
+  color: var(--muted);
+  line-height: 1.9;
+}
+
+/* FOOTER */
+
+.site-footer {
+  padding: 35px 4% 25px;
+  border-top: 1px solid #23424d;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 70px;
+  padding: 15px 0 45px;
+}
+
+.footer-links a {
+  color: var(--text);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: var(--cyan);
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #23424d;
+  color: #84919f;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 1050px) {
+  .albums-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .album-image {
+    height: 300px;
+  }
+}
+
+@media (max-width: 650px) {
+  .site-header {
+    flex-direction: column;
+    padding: 22px 5%;
+  }
+
+  .brand {
+    font-size: 0.7rem;
+  }
+
+  .main-nav {
+    justify-content: center;
+    gap: 17px;
+  }
+
+  .main-nav a {
+    font-size: 0.6rem;
+  }
+
+  .hero {
+    min-height: 270px;
+  }
+
+  .hero h1 {
+    font-size: 1.2rem;
+    letter-spacing: 0.13em;
+  }
+
+  .hero-subtitle {
+    font-size: 0.55rem;
+    letter-spacing: 0.12em;
+  }
+
+  .albums-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .album-image {
+    height: 310px;
+  }
+
+  .album-info h2 {
+    font-size: 1.4rem;
+  }
+
+  .footer-links {
+    gap: 25px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* Respect visitors who prefer less animation */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .album-card,
+  .main-nav a,
+  .footer-links a {
+    transition: none;
+  }
+}
+/* ==========================================
+   PHOTOSBYJOVONNE — ALBUM GALLERY PAGES
+   ========================================== */
+
+/* Individual album accent colors */
+
+.gallery-page {
+  --album-accent: var(--cyan);
+}
+
+body:has(.gallery-hero h1) .gallery-hero {
+  position: relative;
+}
+
+/* Events */
+body:has(title) {
+  color: var(--text);
+}
+
+.gallery-page:has(.gallery-hero h1) {
+  min-height: 100vh;
+}
+
+/* Album header */
+
+.gallery-hero {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 85px 6% 55px;
+  text-align: center;
+  border-bottom: 1px solid #263440;
+}
+
+.gallery-label {
+  margin: 0 0 20px;
+  color: var(--cyan);
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+}
+
+.gallery-hero h1 {
+  margin: 0;
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  line-height: 1.2;
+  color: var(--album-accent);
+  text-shadow: 0 0 30px
+    color-mix(in srgb, var(--album-accent) 25%, transparent);
+}
+
+.gallery-description {
+  margin: 20px auto 35px;
+  color: var(--muted);
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+}
+
+.back-link {
+  display: inline-block;
+  padding: 12px 22px;
+  color: var(--album-accent);
+  border: 1px solid var(--album-accent);
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  transition: background 0.2s, color 0.2s;
+}
+
+.back-link:hover {
+  background: var(--album-accent);
+  color: #030609;
+}
+
+/* Photography portfolio layout */
+
+.gallery-container {
+  max-width: 1550px;
+  margin: 0 auto;
+  padding: 60px 4% 100px;
+}
+
+/*
+  Masonry-style columns let landscape
+  and portrait photos keep their natural
+  proportions without being cropped.
+*/
+
+.portfolio-grid {
+  columns: 3;
+  column-gap: 22px;
+}
+
+.portfolio-grid img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 22px;
+
+  object-fit: contain;
+
+  background: #0a1017;
+  border: 1px solid #293844;
+
+  break-inside: avoid;
+  cursor: zoom-in;
+
+  transition:
+    border-color 0.25s,
+    transform 0.25s;
+}
+
+.portfolio-grid img:hover {
+  border-color: var(--album-accent);
+  transform: scale(1.01);
+}
+
+/* Album-specific neon colors */
+
+
+
+.gallery-page:has(
+  .gallery-label
+) .gallery-container {
+  border-top: 1px solid transparent;
+}
+
+/* Responsive galleries */
+
+@media (max-width: 1000px) {
+  .portfolio-grid {
+    columns: 2;
+    column-gap: 16px;
+  }
+
+  .portfolio-grid img {
+    margin-bottom: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery-hero {
+    padding: 60px 5% 40px;
+  }
+
+  .gallery-hero h1 {
+    font-size: 2.6rem;
+    letter-spacing: 0.12em;
+  }
+
+  .gallery-container {
+    padding: 35px 5% 65px;
+  }
+
+  .portfolio-grid {
+    columns: 1;
+  }
+}
+/* =====================================
+   INDIVIDUAL ALBUM COLOR THEMES
+   ===================================== */
+
+.events-theme {
+  --album-accent: #00e5ff;
+}
+
+.infrared-theme {
+  --album-accent: #ff3cac;
+}
+
+.scenery-theme {
+  --album-accent: #ffe45e;
+}
+
+.others-theme {
+  --album-accent: #a8b0bb;
+}
+
+/* Apply each album color consistently */
+
+.gallery-page .gallery-label {
+  color: var(--album-accent);
+}
+
+.gallery-page .gallery-hero h1 {
+  color: var(--album-accent);
+}
+
+.gallery-page .back-link {
+  color: var(--album-accent);
+  border-color: var(--album-accent);
+}
+
+.gallery-page .back-link:hover {
+  background: var(--album-accent);
+  color: #030609;
+}
+
+.gallery-page .portfolio-grid img:hover {
+  border-color: var(--album-accent);
+}
+
+
+/* =====================================
+   HOMEPAGE REFINEMENTS
+   ===================================== */
+
+/* Make the central logo more prominent */
+
+.home-page .hero {
+  min-height: 280px;
+  padding: 15px 20px 10px;
+}
+
+.home-page .hero-logo {
+  width: min(340px, 65vw);
+  max-height: 260px;
+}
+
+/* Improve the website title */
+
+.home-page .hero h1 {
+  margin: 10px 0 4px;
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  letter-spacing: 0.22em;
+}
+
+/* Bring album cards closer to the logo */
+
+.home-page .albums-section {
+  padding-top: 15px;
+}
+
+/* Keep the cards visually balanced */
+
+.home-page .albums-grid {
+  gap: 20px;
+}
+
+@media (max-width: 650px) {
+  .home-page .hero {
+    min-height: 250px;
+  }
+
+  .home-page .hero-logo {
+    width: min(280px, 75vw);
+  }
+}
+/* ==========================================
+   STEP 18 — ANGULAR NEON ALBUM FRAMES
+   ========================================== */
+
+/* The outer card provides the neon glow */
+
+.home-page .album-card {
+  position: relative;
+  isolation: isolate;
+  border: none;
+  border-radius: 0;
+  clip-path: none;
+  filter: none;
+  box-shadow: none;
+
+  padding: 16px;
+  background: transparent;
+
+  transition: transform 0.3s ease;
+}
+
+/* Angular glowing border */
+
+.home-page .album-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+
+  background: var(--accent);
+
+  clip-path: polygon(
+    20px 0,
+    calc(100% - 20px) 0,
+    100% 20px,
+    100% calc(100% - 20px),
+    calc(100% - 20px) 100%,
+    20px 100%,
+    0 calc(100% - 20px),
+    0 20px
+  );
+
+  filter: drop-shadow(0 0 12px var(--accent));
+}
+
+/* Dark interior with matching cut corners */
+
+.home-page .album-card::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  z-index: -1;
+
+  background: #04080d;
+
+  clip-path: polygon(
+    19px 0,
+    calc(100% - 19px) 0,
+    100% 19px,
+    100% calc(100% - 19px),
+    calc(100% - 19px) 100%,
+    19px 100%,
+    0 calc(100% - 19px),
+    0 19px
+  );
+}
+
+/* Keep album content above the decorative frame */
+
+.home-page .album-image,
+.home-page .album-info {
+  position: relative;
+  z-index: 1;
+}
+
+/* Neon glow around the entire card */
+
+.home-page .album-card {
+  filter: drop-shadow(0 0 5px var(--accent));
+}
+
+/* Hover effect */
+
+.home-page .album-card:hover {
+  transform: translateY(-6px);
+  filter: drop-shadow(0 0 11px var(--accent));
+}
+
+/* Keep photographs completely uncropped */
+
+.home-page .album-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+/* =====================================
+   STEP 19 — UNCROPPED ALBUM COVERS
+   ===================================== */
+
+/* Remove the fixed image height */
+
+.home-page .album-image {
+  height: auto;
+  min-height: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  overflow: visible;
+}
+
+/* Display the complete photograph */
+
+.home-page .album-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Keep the album cards consistent */
+
+.home-page .album-card {
+  justify-content: space-between;
+}
+
+.home-page .album-info {
+  margin-top: 12px;
+}
+/* ==========================================
+   STEP 20 — FUTURISTIC HOMEPAGE DETAILS
+   ========================================== */
+
+/* Subtle geometric background */
+
+.home-page {
+  background-color: #030609;
+
+  background-image:
+    linear-gradient(
+      rgba(0, 229, 255, 0.025) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(0, 229, 255, 0.025) 1px,
+      transparent 1px
+    ),
+    radial-gradient(
+      ellipse at 50% 40%,
+      rgba(0, 229, 255, 0.055),
+      transparent 65%
+    );
+
+  background-size:
+    65px 65px,
+    65px 65px,
+    100% 100%;
+}
+
+/* Navigation lighting */
+
+.home-page .site-header {
+  position: relative;
+  border-bottom: 1px solid rgba(0, 229, 255, 0.3);
+}
+
+.home-page .site-header::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 20%;
+  width: 60%;
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #00e5ff,
+    transparent
+  );
+
+  box-shadow: 0 0 12px rgba(0, 229, 255, 0.5);
+  pointer-events: none;
+}
+
+/* Decorative lines around the central logo */
+
+.home-page .hero::before,
+.home-page .hero::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 17%;
+  height: 2px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #00e5ff
+  );
+
+  box-shadow: 0 0 12px rgba(0, 229, 255, 0.55);
+  pointer-events: none;
+}
+
+.home-page .hero::before {
+  left: 4%;
+}
+
+.home-page .hero::after {
+  right: 4%;
+  transform: rotate(180deg);
+}
+
+/* Subtle glow around logo */
+
+.home-page .hero-logo {
+  filter:
+    drop-shadow(0 0 12px rgba(0, 229, 255, 0.3))
+    drop-shadow(0 0 28px rgba(255, 60, 172, 0.12));
+}
+
+/* Thin neon line above the albums */
+
+.home-page .albums-section {
+  position: relative;
+}
+
+.home-page .albums-section::before {
+  content: "";
+  display: block;
+  width: min(700px, 75%);
+  height: 1px;
+  margin: 0 auto 35px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 229, 255, 0.7),
+    transparent
+  );
+}
+
+/* Futuristic accent under album titles */
+
+.home-page .album-info h2 {
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.home-page .album-info h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 45px;
+  height: 2px;
+
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--accent);
+}
+
+/* Footer lighting */
+
+.home-page .site-footer {
+  border-top: 1px solid rgba(0, 229, 255, 0.35);
+  box-shadow: 0 -8px 25px rgba(0, 229, 255, 0.035);
+}
+
+.home-page .footer-links a {
+  transition:
+    color 0.25s ease,
+    text-shadow 0.25s ease;
+}
+
+.home-page .footer-links a:hover {
+  color: #00e5ff;
+  text-shadow: 0 0 10px rgba(0, 229, 255, 0.6);
+}
+
+/* Keep decorations subtle on smaller screens */
+
+@media (max-width: 650px) {
+  .home-page .hero::before,
+  .home-page .hero::after {
+    width: 9%;
+    opacity: 0.5;
+  }
+
+  .home-page .albums-section::before {
+    margin-bottom: 25px;
+  }
+}
